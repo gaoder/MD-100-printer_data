@@ -1,0 +1,15 @@
+[Unit]
+Description=MyflaskApp Service
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/home/pi/xlab-env/bin/hypercorn -k asyncio -w 1 -b 0.0.0.0:5000 app:app
+WorkingDirectory=/home/pi/xlab-bot/xlab
+User=pi
+Group=pi
+Restart=always
+Environment="PATH=/home/pi/xlab-env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+[Install]
+WantedBy=multi-user.target 

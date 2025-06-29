@@ -1,0 +1,13 @@
+[Unit]
+Description=AutofullScreenScript
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/pi/printer_data/systemd/auto-fullscreen.sh
+Restart=no
+User=pi
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=multi-user.target 

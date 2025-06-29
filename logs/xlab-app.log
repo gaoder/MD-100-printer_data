@@ -1,0 +1,54 @@
+2025-06-29 05:31:04,475 - app - INFO - 测试日志记录
+2025-06-29 05:37:04,812 - app - INFO - Client y4y71lncHaDql5ecAAAB connected
+2025-06-29 05:37:07,729 - app - INFO - Lamp state changed to on
+2025-06-29 05:40:04,395 - app - INFO - Lamp state changed to off
+2025-06-29 05:40:35,728 - app - INFO - Received door open request from y4y71lncHaDql5ecAAAB
+2025-06-29 05:40:38,134 - app - INFO - Door opened successfully
+2025-06-29 05:40:45,539 - app - INFO - Door operation completed
+2025-06-29 05:41:34,388 - app - INFO - Received run_auto_exit_fullscreen request
+2025-06-29 05:41:34,652 - app - ERROR - 退出全屏模式失败: Command '['/bin/bash', '/home/pi/printer_data/systemd/auto-exit-fullscreen.sh']' returned non-zero exit status 5.
+2025-06-29 05:41:34,655 - app - INFO - Client y4y71lncHaDql5ecAAAB disconnected
+2025-06-29 05:41:42,288 - app - INFO - Client r24vxn3tn6BepmK8AAAD connected
+2025-06-29 05:41:45,212 - app - INFO - Lamp state changed to on
+2025-06-29 05:42:17,298 - app - INFO - System reset completed
+2025-06-29 05:58:31,983 - app - INFO - Client r24vxn3tn6BepmK8AAAD disconnected
+2025-06-29 06:10:53,867 - app - INFO - Client Tr736FkCUXmH03bLAAAB connected
+2025-06-29 06:10:56,799 - app - INFO - Lamp state changed to on
+2025-06-29 06:11:29,966 - app - INFO - System reset completed
+2025-06-29 06:11:42,222 - app - INFO - Received run_auto_exit_fullscreen request
+2025-06-29 06:11:42,458 - app - INFO - Client Tr736FkCUXmH03bLAAAB disconnected
+2025-06-29 06:18:08,758 - app - INFO - Client _rMWN63YmHuZEWWLAAAD connected
+2025-06-29 06:18:11,691 - app - INFO - Lamp state changed to off
+2025-06-29 06:18:44,852 - app - INFO - System reset completed
+2025-06-29 06:19:12,147 - app - INFO - Received run_auto_exit_fullscreen request
+2025-06-29 06:19:12,365 - app - INFO - Client _rMWN63YmHuZEWWLAAAD disconnected
+2025-06-29 06:32:13,347 - app - INFO - Client NjIi7JEpqED2Q1JWAAAF connected
+2025-06-29 06:32:16,274 - app - INFO - Lamp state changed to off
+2025-06-29 06:32:49,411 - app - INFO - System reset completed
+2025-06-29 06:33:00,958 - app - INFO - Received run_auto_exit_fullscreen request
+2025-06-29 06:33:01,206 - app - INFO - Client NjIi7JEpqED2Q1JWAAAF disconnected
+2025-06-29 06:33:28,860 - app - INFO - Client cX7HdNE_nMhCUH92AAAH connected
+2025-06-29 06:33:31,791 - app - INFO - Lamp state changed to off
+2025-06-29 06:34:04,936 - app - INFO - System reset completed
+2025-06-29 06:35:24,000 - app - INFO - Received run_auto_exit_fullscreen request
+2025-06-29 06:35:24,239 - app - INFO - Client cX7HdNE_nMhCUH92AAAH disconnected
+2025-06-29 07:56:26,918 - app - INFO - Client qTZQcoIVGVtvGJa0AAAJ connected
+2025-06-29 07:56:29,845 - app - INFO - Lamp state changed to off
+2025-06-29 07:57:03,024 - app - INFO - System reset completed
+2025-06-29 07:57:26,961 - app - INFO - Lamp state changed to off
+2025-06-29 07:57:31,672 - app - INFO - Lamp state changed to on
+2025-06-29 07:58:53,125 - app - INFO - Emergency stop triggered!
+2025-06-29 07:58:53,934 - app - INFO - Emergency stop triggered!
+2025-06-29 07:58:53,977 - app - INFO - Emergency stop triggered!
+2025-06-29 07:58:54,472 - app - INFO - Emergency stop executed successfully
+2025-06-29 07:58:55,491 - app - INFO - Emergency stop executed successfully
+2025-06-29 07:58:55,784 - app - INFO - Emergency stop executed successfully
+2025-06-29 07:59:33,619 - app - INFO - System reset completed
+2025-06-29 07:59:57,978 - app - INFO - Received run_auto_exit_fullscreen request
+2025-06-29 07:59:58,216 - app - INFO - Client qTZQcoIVGVtvGJa0AAAJ disconnected
+2025-06-29 08:00:08,202 - app - INFO - Client yxul9bxF_hWyLBP9AAAL connected
+2025-06-29 08:00:11,130 - app - INFO - Lamp state changed to off
+2025-06-29 08:00:44,304 - app - INFO - System reset completed
+2025-06-29 08:03:00,821 - app - INFO - Client VGM9ubs_c6AAnmv4AAAB connected
+2025-06-29 08:03:17,192 - app - INFO - Lamp state changed to on
+2025-06-29 08:03:52,448 - app - INFO - System reset completed

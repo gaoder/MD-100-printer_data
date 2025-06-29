@@ -1,0 +1,13 @@
+[Unit]
+Description=Vue.js Application
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/http-server -p 8080 /home/pi/xlab-bot/frontend/dist
+WorkingDirectory=/home/pi/xlab-bot/frontend/dist
+Restart=always
+User=pi
+Environment=PATH=/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin
+
+[Install]
+WantedBy=multi-user.target 

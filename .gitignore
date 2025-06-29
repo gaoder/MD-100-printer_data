@@ -1,0 +1,23 @@
+# 数据库文件
+database/*.db-journal
+database/*.db-shm
+database/*.db-wal
+
+# 日志轮转文件
+logs/*.gz
+logs/*.1
+logs/*.2
+logs/*.3
+logs/*.4
+logs/*.5
+logs/*.old
+
+# 备份文件
+*.bak
+*.backup
+*copy.conf
+
+# 临时文件
+*.tmp
+*.temp
+.DS_Store 
