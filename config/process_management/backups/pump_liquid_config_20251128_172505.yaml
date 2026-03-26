@@ -1,0 +1,49 @@
+default_liquid_type: media_standard
+liquid_types:
+  water:
+    name: 纯水
+    factor: 0.999
+    tubes:
+    - tube_spec_17#_standard_longerpump
+    recommended_speed: 80
+    description: 阿萨德分
+    calibration_info:
+      last_calibrated_at: '2025-11-22 15:17:56'
+      calibrated_by: gg
+      calibration_note: null
+  media_standard:
+    name: 标准培养基
+    factor: 1.02
+    tubes:
+    - tube_spec_17#_standard_longerpump
+    recommended_speed: 85
+    description: 常用标准培养基，黏度略高于水
+    calibration_info:
+      last_calibrated_at: null
+      calibrated_by: null
+      calibration_note: null
+  media_lb:
+    name: LB培养基
+    factor: 1.05
+    tubes:
+    - tube_spec_17#_standard_longerpump
+    recommended_speed: 100
+    description: LB液体培养基，黏度较高
+    calibration_info:
+      last_calibrated_at: null
+      calibrated_by: null
+      calibration_note: null
+  media_agar:
+    name: 琼脂培养基
+    factor: 1.08
+    tubes:
+    - tube_spec_17#_standard_longerpump
+    recommended_speed: 80
+    description: 琼脂培养基，高温状态下使用，黏度高
+    calibration_info:
+      last_calibrated_at: null
+      calibrated_by: null
+      calibration_note: null
+legacy_mapping:
+  media: media_standard
+  buffer: buffer_pbs

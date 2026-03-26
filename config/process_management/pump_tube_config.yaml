@@ -1,0 +1,170 @@
+# 蠕动泵硅胶管配置
+# 版本: 2.0.0
+# 格式: YAML
+# 说明: 定义不同品牌、规格、型号的硅胶管和泵的配置，每个泵+泵管组合都有独立的ml_per_rev标定值
+
+# ============================================================================
+# 标定值的唯一性说明
+# ============================================================================
+# ml_per_rev 标定值的唯一性取决于以下5个因素：
+# 1. 泵品牌（如：长岭、Cole-Parmer、Ismatec）
+# 2. 泵型号（如：CJ-XXX、BQ50-1J、Reglo Digital）
+# 3. 泵管品牌（如：标准品牌、长江品牌）
+# 4. 泵管规格（如：14#、16#、17#、25#）
+# 5. 泵管型号（如：不同内径、不同材料）
+#
+# 注意：如果更换泵的品牌或型号，需要重新标定所有泵管的ml_per_rev值。
+# 标定方法：使用纯水作为标定物，不受转速影响（恒定值）。
+# ============================================================================
+
+# 当前使用的泵ID（必须存在于 pumps 配置表中）
+current_pump: "pump_changling_cj_xxx"
+
+# ============================================================================
+# 泵配置表（系统支持的泵）
+# ============================================================================
+# 每个泵都有一个唯一的ID，用于在 tube_specs 中引用
+pumps:
+  # 长岭蠕动泵（出厂默认）
+  pump_changling_cj_xxx:
+    brand: "XBOT"           # 泵品牌
+    model: "XB-YZ1515x"              # 泵型号（请根据实际型号修改）
+    name: "蠕动泵"
+    enabled: true                # 当前使用的泵
+    description: "出厂默认泵，用于标定所有泵管的ml_per_rev值"
+    notes: "默认蠕动泵型号"
+
+
+
+# ============================================================================
+# 默认使用的硅胶管规格ID
+# ============================================================================
+# 注意：此ID必须存在于 tube_specs 中，且对应的 pump_id 必须与 current_pump 匹配
+default_tube_spec: "tube_spec_17#_standard_longerpump"
+
+# ============================================================================
+# 硅胶管规格配置表
+# ============================================================================
+# 每个泵+泵管组合都需要单独标定ml_per_rev值
+# 如果同一根泵管在不同泵上使用，需要创建多个条目
+tube_specs:
+  # 标准品牌 17# 硅胶管（在默认泵 XB-YZ1515x 上标定）
+  tube_spec_17#_standard_longerpump:
+    name: "17# 硅胶管 (标准品牌)"
+    display_name: "17# 硅胶管"     # 客户可见的简化显示名称
+    tube_number: 17                # 国际标准管号
+    inner_diameter: 6.4            # 内径 (mm)
+    outer_diameter: 9.6            # 外径 (mm)
+    tube_brand: "Standard"         # 泵管品牌
+    tube_model: "Standard-17#"     # 泵管型号
+    pump_id: "pump_changling_cj_xxx"  # 引用pumps表中的泵ID（标定时使用的泵，工厂字段，客户不可见）
+    ml_per_rev: 1.85              # 实际标定值（基于指定泵+泵管组合的纯水标定值，工厂字段，客户不可见）
+    enabled: true                  # 是否启用
+    description: "标准流量，适合日常使用"  # 客户可见的描述（简化版，隐藏技术细节）
+    customer_visible: true         # 是否对客户可见（默认true）
+    # 工厂字段（技术细节，客户不可见）
+    factory_description: "出厂默认配置，标准品牌17#硅胶管，在默认泵标定"
+    calibration_note: "基于默认泵型号标定，10圈纯水=30ml，ml_per_rev=3"
+
+  
+
+  # 示例：如果同一根标准品牌17#管在Cole-Parmer泵上使用，需要创建新条目
+  # tube_spec_17#_standard_cole_parmer:
+  #   name: "17# 硅胶管 (标准品牌) - Cole-Parmer"
+  #   tube_number: 17
+  #   inner_diameter: 6.4
+  #   outer_diameter: 9.6
+  #   tube_brand: "Standard"
+  #   tube_model: "Standard-17#"
+  #   pump_id: "pump_cole_parmer_bq50"  # 引用不同泵
+  #   ml_per_rev: 0.48                  # 不同泵的标定值可能不同
+  #   enabled: false                    # 如果不是当前使用的泵，可以禁用
+  #   description: "标准品牌17#硅胶管，在Cole-Parmer BQ50-1J泵上标定"
+  #   calibration_note: "基于Cole-Parmer BQ50-1J泵标定，10圈纯水=4.8ml，ml_per_rev=0.48"
+
+  # 示例：如果使用不同品牌的泵管，需要创建新条目
+  # tube_spec_17#_changjiang_changling:
+  #   name: "17# 硅胶管 (长江品牌)"
+  #   tube_number: 17
+  #   inner_diameter: 6.4
+  #   outer_diameter: 9.6
+  #   tube_brand: "ChangJiang"          # 不同品牌
+  #   tube_model: "CJ-17#"
+  #   pump_id: "pump_changling_cj_xxx"
+  #   ml_per_rev: 0.51                  # 不同品牌的泵管标定值不同
+  #   enabled: false
+  #   description: "长江品牌17#硅胶管，在长岭CJ-XXX泵上标定"
+  #   calibration_note: "基于长岭CJ-XXX泵标定，10圈纯水=5.1ml，ml_per_rev=0.51（品牌差异）"
+
+# ============================================================================
+# 国际标准硅胶管编号对照表
+# ============================================================================
+# 参考表，用于快速查找标准规格参数
+standard_tube_numbers:
+  13#:
+    inner_diameter: 4.0
+    outer_diameter: 7.0
+    description: "超小流量"
+  14#:
+    inner_diameter: 4.8
+    outer_diameter: 8.0
+    description: "小流量"
+  15#:
+    inner_diameter: 5.6
+    outer_diameter: 8.0
+    description: "中小流量"
+  16#:
+    inner_diameter: 6.0
+    outer_diameter: 9.0
+    description: "标准流量"
+  17#:
+    inner_diameter: 6.4
+    outer_diameter: 9.6
+    description: "标准流量（常用）"
+  18#:
+    inner_diameter: 7.0
+    outer_diameter: 10.0
+    description: "中流量"
+  25#:
+    inner_diameter: 8.0
+    outer_diameter: 12.0
+    description: "大流量"
+
+# ============================================================================
+# 校准说明
+# ============================================================================
+calibration_guide:
+  description: "如何校准硅胶管参数"
+  
+  # 标定值的唯一性
+  uniqueness:
+    description: "ml_per_rev 标定值的唯一性取决于以下5个因素"
+    factors:
+      - "泵品牌（如：长岭、Cole-Parmer、Ismatec）"
+      - "泵型号（如：CJ-XXX、BQ50-1J、Reglo Digital）"
+      - "泵管品牌（如：标准品牌、长江品牌）"
+      - "泵管规格（如：14#、16#、17#、25#）"
+      - "泵管型号（如：不同内径、不同材料）"
+    note: "任何一个泵+泵管组合都需要单独标定ml_per_rev值"
+  
+  # 标定方法
+  method:
+    description: "标定方法（标准校准法）"
+    steps:
+      - "1. 确认当前使用的泵品牌和型号（见 pumps 配置表）"
+      - "2. 准备标准量筒（精度 ±1ml）和纯水（基准液体）"
+      - "3. 在指定泵上安装待标定的泵管"
+      - "4. 设置泵运行固定圈数（如10圈）"
+      - "5. 测量实际抽取的纯水量"
+      - "6. 计算 ml_per_rev = 实际水量 / 圈数"
+      - "7. 更新配置文件中对应条目的 ml_per_rev 值"
+      - "8. 更新 calibration_note 记录标定信息"
+    example: "10圈抽取30ml纯水，则 ml_per_rev = 30.0 / 10 = 3.0 ml/rev"
+  
+  # 重要注意事项
+  important_notes:
+    - "标定值基于纯水，不受转速影响（恒定值）"
+    - "如果更换泵的品牌或型号，需要重新标定所有泵管的ml_per_rev值"
+    - "同一根泵管在不同泵上使用，标定值可能不同"
+    - "不同品牌的同规格泵管，标定值可能不同"
+    - "建议每次更换泵或泵管后都进行重新标定"

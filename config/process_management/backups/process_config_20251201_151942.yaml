@@ -1,0 +1,38 @@
+defaults:
+  name: 标准流程
+  description: 流程描述
+  enabled: true
+  dish_model: doudian_90mm
+  dish_number: 100
+  pump_volume: 20.0
+  pump_speed: 80
+  liquid_type: media_standard
+  tubes:
+  - tube_spec_17#_standard_longerpump
+  pause_time: 0.0
+  process_end_back_volume: 10.0
+  rotor_speed: medium
+  uv_light_enabled: true
+rotor_speed_mapping:
+  high:
+    rs_speed: 3.0
+  medium:
+    rs_speed: 2.0
+  low:
+    rs_speed: 1.0
+processes:
+- id: 6
+  name: 琼脂培养基加液
+  description: 琼脂培养基高温加液流程
+  enabled: true
+  dish_number: 360
+  dish_model: doudian_90mm
+  pump_volume: 20
+  pump_speed: 80
+  liquid_type: media_agar
+  tubes:
+  - tube_spec_17#_standard_longerpump
+  pause_time: 0
+  process_end_back_volume: 10
+  rotor_speed: low
+  uv_light_enabled: true

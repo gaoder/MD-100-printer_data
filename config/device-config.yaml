@@ -1,0 +1,45 @@
+# ==================== XLab 设备配置文件 ====================
+# 文件路径: /home/pi/printer_data/config/device-config.yaml
+# 说明: 此文件用于配置设备的基本信息、显示选项和功能特性
+# 修改此文件后需要重启服务才能生效
+
+# ==================== 设备基本信息 ====================
+device:
+  type: md-100              # 设备类型标识符（用于程序内部识别）
+  model: MD-100    # 设备型号（显示在界面上）
+  name: 全自动培养基分装仪           # 设备名称（用于标识和显示）
+  brand: XLab                   # 品牌名称
+  serialNumber: "MD2025110001"              # 序列号（选填，用于追踪和识别具体设备）
+  version: "1.0.0"              # 固件/软件版本号
+
+# ==================== 顶部显示配置 ====================
+header:
+  display:
+    showBrand: false            # 是否在顶部显示品牌名称
+    showModel: true             # 是否在顶部显示设备型号
+    brandPosition: left         # 品牌显示位置: left（左侧）, center（中间）, right（右侧）
+    modelPosition: left         # 型号显示位置: left（左侧）, center（中间）, right（右侧）
+    customTitle: null           # 自定义标题（如果设置，将覆盖品牌和型号显示）
+
+# ==================== 功能特性开关 （未使用）====================
+# 根据不同设备型号，某些功能可能不可用，通过此配置控制
+features:
+  uvLight: true                 # UV紫外线灯功能
+  multiChannel: false           # 多通道吸液功能（当前设备不支持）
+  autoCalibration: true         # 自动校准功能
+  needleCleaning: true          # 针头清洁功能
+  temperatureControl: false     # 温度控制功能（当前设备不支持）
+  doorSensor: false             # 门传感器功能（当前设备不支持）
+
+# ==================== 显示配置 （未使用）====================
+display:
+  theme: dark                   # 界面主题: dark（深色）, light（浅色）
+  language: zh-CN               # 界面语言: zh-CN（简体中文）, en-US（英文）
+  timezone: Asia/Shanghai       # 时区设置
+
+# ==================== 备注说明 ====================
+# 1. 修改此文件后需要重启后端服务才能生效
+# 2. 如果文件不存在或格式错误，系统将使用默认配置
+# 3. 不同设备型号可以通过修改此文件来适配不同的硬件配置
+# 4. customTitle 如果设置为非空字符串，将完全替代品牌和型号的显示
+

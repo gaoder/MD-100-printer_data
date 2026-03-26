@@ -1,0 +1,74 @@
+default_dish_model: doudian_90mm
+dish_models:
+  doudian_90mm:
+    name: 逗点培养皿 (90mm)
+    brand: DOUDIAN
+    standard_size: 90
+    petri_body_diameter: 87.4
+    petri_dish_height: 15
+    gripper_close_offset: 0.0
+    gripper_height_offset: 10.0
+    description: 逗点品牌，国产常用培养皿
+  corning_90mm:
+    name: 康宁培养皿 (90mm)
+    brand: Corning
+    standard_size: 90
+    petri_body_diameter: 87.5
+    petri_dish_height: 15
+    gripper_close_offset: 0.1
+    gripper_height_offset: 10.0
+    description: 康宁品牌，进口高端培养皿
+  nest_90mm:
+    name: NEST培养皿 (90mm)
+    brand: NEST
+    standard_size: 90
+    petri_body_diameter: 87.3
+    petri_dish_height: 15
+    gripper_close_offset: 0.0
+    gripper_height_offset: 10.0
+    description: NEST品牌，国产优质培养皿
+  doudian_100mm:
+    name: 逗点培养皿 (100mm)
+    brand: DOUDIAN
+    standard_size: 100
+    petri_body_diameter: 97.0
+    petri_dish_height: 20
+    gripper_close_offset: 2.0
+    gripper_height_offset: 12.0
+    description: 逗点品牌大型培养皿，适用于大容量培养
+  doudian_60mm:
+    name: 逗点培养皿 (60mm)
+    brand: DOUDIAN
+    standard_size: 60
+    petri_body_diameter: 58
+    petri_dish_height: 12
+    gripper_close_offset: -2
+    gripper_height_offset: 8
+    description: 逗点品牌小型培养皿，适用于少量样本
+brands:
+  DOUDIAN:
+    name: 逗点
+    country: 中国
+    quality: 标准
+    notes: 性价比高，适合大批量使用
+  Corning:
+    name: 康宁
+    country: 美国
+    quality: 高端
+    notes: 国际品牌，质量稳定
+  NEST:
+    name: NEST
+    country: 中国
+    quality: 优质
+    notes: 国产优质品牌，科研常用
+calibration_notes:
+  description: 不同品牌培养皿的校准建议
+  recommendations:
+  - 新品牌培养皿首次使用前必须校准
+  - 测试夹爪力度，确保不会滑落或压碎
+  - 测试抓取高度，确保准确定位
+  - 记录实际参数并更新配置文件
+  parameters_to_test:
+  - 'gripper_close_offset: 影响抓取力度'
+  - 'gripper_height_offset: 影响抓取位置'
+  - 'petri_body_diameter: 影响定位精度'

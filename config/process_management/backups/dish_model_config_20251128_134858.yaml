@@ -1,0 +1,116 @@
+# 培养皿型号配置
+# 版本: 1.0.0
+# 格式: YAML
+# 说明: 定义不同品牌和型号培养皿的参数
+
+# 默认使用的培养皿型号
+default_dish_model: "doudian_90mm"
+
+# 培养皿型号配置表
+dish_models:
+  # ========== 90mm 培养皿（不同品牌）==========
+  
+  # 逗点品牌 90mm
+  doudian_90mm:
+    name: "逗点培养皿 (90mm)"
+    brand: "DOUDIAN"
+    standard_size: 90               # 标准直径 (mm)
+    petri_body_diameter: 87.4       # 培养皿实际直径 (mm)
+    petri_dish_height: 15           # 高度 (mm)
+    gripper_close_offset: 0.0       # 夹爪闭合偏移量 - 影响抓取力度 (mm)
+    gripper_height_offset: 10.0     # 夹爪高度偏移量 - 抓底部位置 (mm)
+    description: "逗点品牌，国产常用培养皿"
+
+  # 康宁品牌 90mm
+  corning_90mm:
+    name: "康宁培养皿 (90mm)"
+    brand: "Corning"
+    standard_size: 90
+    petri_body_diameter: 87.5       # 康宁可能略有不同
+    petri_dish_height: 15
+    gripper_close_offset: 0.1       # 可能需要微调
+    gripper_height_offset: 10.0
+    description: "康宁品牌，进口高端培养皿"
+
+  # NEST 品牌 90mm
+  nest_90mm:
+    name: "NEST培养皿 (90mm)"
+    brand: "NEST"
+    standard_size: 90
+    petri_body_diameter: 87.3
+    petri_dish_height: 15
+    gripper_close_offset: 0.0
+    gripper_height_offset: 10.0
+    description: "NEST品牌，国产优质培养皿"
+
+  # ========== 100mm 培养皿（不同品牌）==========
+  
+  # 大型培养皿 100mm
+  doudian_100mm:
+    name: "逗点培养皿 (100mm)"
+    brand: "DOUDIAN"
+    standard_size: 100
+    petri_body_diameter: 97.0
+    petri_dish_height: 20
+    gripper_close_offset: 2.0       # 较大尺寸，需要更大的夹爪开合
+    gripper_height_offset: 12.0
+    description: "逗点品牌大型培养皿，适用于大容量培养"
+
+  # ========== 60mm 培养皿 ==========
+  
+  # 小型培养皿 60mm
+  doudian_60mm:
+    name: "逗点培养皿 (60mm)"
+    brand: "DOUDIAN"
+    standard_size: 60
+    petri_body_diameter: 58.0
+    petri_dish_height: 12
+    gripper_close_offset: -2.0      # 较小尺寸，夹爪闭合更紧
+    gripper_height_offset: 8.0
+    description: "逗点品牌小型培养皿，适用于少量样本"
+
+  # ========== 深孔培养皿 ==========
+  
+  # 深孔培养皿
+  doudian_deep_well:
+    name: "逗点深孔培养皿"
+    brand: "DOUDIAN"
+    standard_size: 90
+    petri_body_diameter: 87.4
+    petri_dish_height: 25           # 更高
+    gripper_close_offset: 0.0
+    gripper_height_offset: 15.0     # 需要更高的抓取位置
+    description: "逗点品牌深孔培养皿，适用于特殊培养"
+
+# ========== 品牌对照表 ==========
+brands:
+  DOUDIAN:
+    name: "逗点"
+    country: "中国"
+    quality: "标准"
+    notes: "性价比高，适合大批量使用"
+  
+  Corning:
+    name: "康宁"
+    country: "美国"
+    quality: "高端"
+    notes: "国际品牌，质量稳定"
+  
+  NEST:
+    name: "NEST"
+    country: "中国"
+    quality: "优质"
+    notes: "国产优质品牌，科研常用"
+
+# ========== 校准建议 ==========
+calibration_notes:
+  description: "不同品牌培养皿的校准建议"
+  recommendations:
+    - "新品牌培养皿首次使用前必须校准"
+    - "测试夹爪力度，确保不会滑落或压碎"
+    - "测试抓取高度，确保准确定位"
+    - "记录实际参数并更新配置文件"
+  parameters_to_test:
+    - "gripper_close_offset: 影响抓取力度"
+    - "gripper_height_offset: 影响抓取位置"
+    - "petri_body_diameter: 影响定位精度"
